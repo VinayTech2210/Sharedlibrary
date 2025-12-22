@@ -1,4 +1,4 @@
 def gitdownload(repo)
 {
-https://github.com/IntelliqDevops/${repo}.git
+git "https://github.com/IntelliqDevops/${repo}.git"
 }
