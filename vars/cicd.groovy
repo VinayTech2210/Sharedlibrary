@@ -8,5 +8,7 @@ def gitbuildArtifact()
 }
 def DeployementTomcat(jobname,ipaddress,contextpath)
 {
-sh "scp /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war \azureuser@{ipaddress}:/var/lib/tomcat10/webapps/{contextpath}.war"
+
+sh "scp /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war azureuser@${ipaddress}:/var/lib/tomcat10/webapps/${contextpath}.war"
+  
 }
