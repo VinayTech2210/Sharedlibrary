@@ -1,6 +1,6 @@
 def gitdownload(repo)
 {
-git "https://github.com/VinayTech2210/${repo}.git"
+git "https://github.com/IntelliqDevops/${repo}.git"
 }
 def gitbuildArtifact()
 {
@@ -8,7 +8,9 @@ def gitbuildArtifact()
 }
 def DeployementTomcat(jobname,ipaddress,contextpath)
 {
-
 sh "scp /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war azureuser@${ipaddress}:/var/lib/tomcat10/webapps/${contextpath}.war"
-  
+}
+def runSelenium(jobname)
+{
+  sh 'java -jar /var/lib/jenkins/workspace/${jobname}/testing.jar'
 }
